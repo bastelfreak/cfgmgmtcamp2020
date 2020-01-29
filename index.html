@@ -187,28 +187,117 @@ background-size: cover
 
 ---
 
-class: center, middle, inverse
-
-# Let us go on a monitoring journey
-
----
-
 background-image: url(blue-skies.jpg)
 background-size: cover
 
+## $ whoami
+
+* Robert 'flipez' Müller
+
+* Ruby Developer since 2013
+
+* Builds clouds
+
+???
+
+*
+
+---
+class: center, middle, inverse
+
+# The path of a Open Source Maintainer...
+
+## What do we actually do?
+
+???
+
+* lets have a look on the daily tasks a maintainer can do to keep modules in shape
+
+---
+
+background-image: url(yakshaving.jpg)
+background-size: cover
+
+???
+
+* lets start with yak shaving
+---
+
 .left-column[
-## Starting Point
+## Yak shaving
+### Dependencies
 ]
 
 .right-column[
 
-* Assume you maintain a few thousand servers
+![imagefoo](stdlib7.png)
 
 ]
 
 .footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
+
+Puppetlabs releases a new major version of stdlib
+---
+
+.left-column[
+## Yak shaving
+### Dependencies
+]
+
+.right-column[
+
+![imagefoo](deps.png)
+
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* This leads to an interesting challenge
+* All puppet modules have an upper version boundary
+* At least in acceptance tests those boundaries are enforced, we need to update it
+* vox pupuli has 105 modules that depend on stdlib
+---
+
+.left-column[
+## Yak shaving
+### Dependencies
+]
+
+.right-column[
+
+![imagefoo](puppet.png)
+
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* of course the same applies for the puppet version
+* Dear puppet: a headsup info for a new release would be dope
+
+---
+
+.left-column[
+## Yak shaving
+### Dependencies
+]
+
+.right-column[
+
+![imagefoo](rhel.png)
+
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* and it applies for all the operating systems
 
 ---
 
@@ -220,7 +309,7 @@ background-size: cover
         // Set the slideshow display ratio
         // Default: '4:3'
         // Alternatives: '16:9', ...
-        ratio: '4:3'}
+        ratio: '16:9'}
       );
     </script>
   </body>
