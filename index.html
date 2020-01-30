@@ -445,17 +445,24 @@ background-size: cover
 ]
 
 .right-column[
-![img](prs.png)
 
 * We have many pull requests
 
-* [https://github.com/pulls?q=is%3Aopen+is%3Apr+user%3Avoxpupuli+archived%3Afalse+sort%3Acreated-desc](https://github.com/pulls?q=is%3Aopen+is%3Apr+user%3Avoxpupuli+archived%3Afalse+sort%3Acreated-desc)
+![img](prs.png)
+
+* [All open PRs](https://github.com/pulls?q=is%3Aopen+is%3Apr+user%3Avoxpupuli+archived%3Afalse+sort%3Acreated-desc)
+
+* [All open PRs with green CI](https://github.com/pulls?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+user%3Avoxpupuli+archived%3Afalse+sort%3Acreated-desc+status%3Asuccess)
+
+* [All open PRs with green CI and no merge conflicts](is:open is:pr user:voxpupuli archived:false status:success sort:updated-desc -label:merge-conflicts )
 ]
 
 .footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
+* `with no merge conflicts` is handled by our labels
+* github search doesn't allow
 ---
 background-image: url(blue-skies.jpg)
 background-size: cover
