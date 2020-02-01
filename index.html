@@ -26,7 +26,7 @@
         font-style: normal;
         font-weight: 400;
         src: local("Droid Serif Regular"), local("DroidSerif-Regular"),
-          url(0aksp294htd-nvJgucYTaJ0EAVxt0G0biEntp43Qt6E.ttf)
+          url(0AKsP294HTD-nvJgucYTaJ0EAVxt0G0biEntp43Qt6E.ttf)
             format("truetype");
       }
       body {
@@ -498,10 +498,15 @@ class: center, middle, inverse
 ]
 
 .right-column[
-![img](label.png)
+![img](labels2.png)
+![img](labels3.png)
+![img](labels4.png)
 
 * New feature? `enhancement` label
-* Additional work required? `needs-work`
+* Bug / Bugfix? `bug` label
+* Breaking change? `backwards-incompatible` label
+* Additional work required? `needs-work` label
+
 ]
 
 .footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
@@ -516,9 +521,14 @@ class: center, middle, inverse
 ]
 
 .right-column[
-* Labels allow us to search/filter pull requests and issues
+Filtering:
 
-* The changelog can be generated based on assigned labels
+* labels like `needs-feedback`, `needs-work`, `tests-fail`, `needs-docs`, `beginner-friendly`, `needs-rebase` help us to sort pull requests and issues by grouping them
+
+Changelog:
+
+* labels like `bug`, `enhancement`, `backwards-incompatible` help us to generate a CHANGELOG.md
+
 ]
 
 .footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
@@ -526,6 +536,7 @@ class: center, middle, inverse
 ???
 
 * show the CHANGELOG.md
+* or https://github.com/voxpupuli/puppet-zabbix/blob/master/CHANGELOG.md
 ---
 
 .left-column[
@@ -592,10 +603,12 @@ class: center, middle, inverse
 
 ???
 
+* explain VPT means Vox Pupuli Tasks
 ---
 
 .left-column[
 ## VPT
+### Automate daily tasks
 ]
 
 .right-column[
@@ -618,8 +631,11 @@ class: center, middle, inverse
 ???
 ---
 
+count: false
+
 .left-column[
 ## VPT
+### Automate daily tasks
 ]
 
 .right-column[
@@ -646,6 +662,7 @@ class: center, middle, inverse
 
 .left-column[
 ## VPT
+### Automate daily tasks
 ]
 
 .right-column[
@@ -660,6 +677,7 @@ class: center, middle, inverse
 
 .left-column[
 ## VPT
+### Automate daily tasks
 ]
 
 .right-column[
@@ -677,6 +695,7 @@ class: center, middle, inverse
 
 .left-column[
 ## VPT
+### Automate daily tasks
 ]
 
 .right-column[
@@ -694,6 +713,7 @@ class: center, middle, inverse
 
 .left-column[
 ## VPT
+### Automate daily tasks
 ]
 
 .right-column[
@@ -722,6 +742,8 @@ class: center, middle, inverse
 ---
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -735,6 +757,8 @@ class: center, middle, inverse
 
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -764,6 +788,8 @@ case type
 
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -804,6 +830,8 @@ end
 ---
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -817,6 +845,8 @@ end
 ---
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -830,6 +860,8 @@ end
 ---
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -843,6 +875,8 @@ end
 ---
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -856,6 +890,8 @@ end
 ---
 .left-column[
 ## VPT
+### Automate daily tasks
+### Architecture
 ]
 
 .right-column[
@@ -866,6 +902,111 @@ end
 
 ???
 
+---
+
+class: center, middle, inverse
+
+# What else can we do?
+
+## What do you want us to do? What are your usecases?
+
+???
+
+---
+.left-column[
+## VPT
+### Automate daily tasks
+### Architecture
+### Lookout
+]
+
+.right-column[
+* Automate more labeling on issues and pull requests
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* All examples we showed earlier could be automated
+
+
+---
+
+count: false
+
+.left-column[
+## VPT
+### Automate daily tasks
+### Architecture
+### Lookout
+]
+
+.right-column[
+* Automate more labeling on issues and pull requests
+
+* Implement GitLab API support
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* We want that other communities and organisations use this as well
+* many of them use GitLab
+
+---
+
+count: false
+
+.left-column[
+## VPT
+### Automate daily tasks
+### Architecture
+### Lookout
+]
+
+.right-column[
+* Automate more labeling on issues and pull requests
+
+* Implement GitLab API support
+
+* Help companies that want to host this on premise for internal repositories
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## VPT
+### Automate daily tasks
+### Architecture
+### Lookout
+### Conclusion
+]
+
+.right-column[
+* Vox Pupuli is awesome, please contribute!
+
+* We've great tooling to scale module handling
+
+* GitHub/GitLab API enables us to automate even more and to focus on code reviewing
+
+* Let us know which parts in the communities you would like to see automated
+
+* Checkout the current dashboard at [voxpupu.li](https://voxpupu.li) or our docs at [github.com/voxpupuli/vox-pupuli-tasks](https://github.com/voxpupuli/vox-pupuli-tasks#vox-pupuli-tasks---the-webapp-for-community-management)
+
+### Thanks for your attention!
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+* We've some open issues with collected ideas. We need feedback!
 
     </textarea>
     <script src="remark-latest.min.js"></script>
