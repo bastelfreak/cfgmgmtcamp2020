@@ -39,6 +39,10 @@
         font-weight: 400;
         margin-bottom: 0;
       }
+      .remark-slide-content {
+        background-image: url(blue-skies.jpg);
+        background-size: cover;
+      }
       .remark-slide-content h1 {
         font-size: 3em;
       }
@@ -210,9 +214,6 @@ class: center, middle, inverse
 
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 ## $ whoami
 
 * Tim 'bastelfreak' Meusel
@@ -228,9 +229,6 @@ background-size: cover
 *
 
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 ## $ whoami
 
@@ -255,9 +253,6 @@ class: center, middle, inverse
 * lets have a look on the daily tasks a maintainer can do to keep modules in shape
 
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Vox Pupuli
@@ -298,9 +293,6 @@ background-size: cover
 * lets start with yak shaving
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
 ## Yak shaving
 ### Dependencies
@@ -318,9 +310,6 @@ background-size: cover
 
 Puppetlabs releases a new major version of stdlib
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Yak shaving
@@ -343,9 +332,6 @@ background-size: cover
 * vox pupuli has 105 modules that depend on stdlib
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
 ## Yak shaving
 ### Dependencies
@@ -366,9 +352,6 @@ background-size: cover
 
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
 ## Yak shaving
 ### Dependencies
@@ -387,9 +370,6 @@ background-size: cover
 * and it applies for all the operating systems
 
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Yak shaving
@@ -410,9 +390,6 @@ background-size: cover
 * sometimes we get repositories migrated to us
 
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Yak shaving
@@ -436,8 +413,6 @@ background-size: cover
 ???
 
 ---
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Yak shaving
@@ -460,8 +435,6 @@ background-size: cover
 ???
 
 ---
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Yak shaving
@@ -494,9 +467,6 @@ class: center, middle, inverse
 
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
 ## Reviews
 ]
@@ -521,8 +491,6 @@ background-size: cover
 * `with no merge conflicts` is handled by our labels
 * github search doesn't allow
 ---
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Reviews
@@ -541,8 +509,6 @@ background-size: cover
 ???
 
 ---
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Reviews
@@ -561,9 +527,6 @@ background-size: cover
 
 * show the CHANGELOG.md
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Reviews
@@ -584,9 +547,6 @@ background-size: cover
 ???
 
 ---
-
-background-image: url(blue-skies.jpg)
-background-size: cover
 
 .left-column[
 ## Reviews
@@ -618,11 +578,8 @@ class: center, middle, inverse
 ---
 
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
-## Rails App
+## VPT
 ]
 
 .right-column[
@@ -637,11 +594,8 @@ background-size: cover
 
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
-## Rails App
+## VPT
 ]
 
 .right-column[
@@ -654,11 +608,8 @@ background-size: cover
 
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
-## Rails App
+## VPT
 ]
 
 .right-column[
@@ -686,11 +637,8 @@ case type
 
 ---
 
-background-image: url(blue-skies.jpg)
-background-size: cover
-
 .left-column[
-## Rails App
+## VPT
 ]
 
 .right-column[
@@ -698,7 +646,7 @@ background-size: cover
 ```ruby
 def validate(saved_changes)
   # Don't run through the validaten, if only the eligable_for_comment attribute got updated
-  return if saved_changes.keys.sort == %w[updated_at eligable_for_comment].sort && !mergeable.nil?
+  return if saved_changes.keys.sort == %w[eligable_for_comment].sort && !mergeable.nil?
 
   # if the pull request is now closed, dont attach/remove labels/comments
   return if closed?
@@ -713,7 +661,7 @@ def validate(saved_changes)
     ##
     # We only add a comment if we addded a label. If the label already is present
     # we also already added the comment. So no need for a new one.
-    add_comment(I18n.t('comment.needs_rebase', author: author)) if ensure_label_is_attached(label)
+    add_comment(I18n.t('c.needs_rebase', author: author)) if ensure_label_is_attached(label)
   elsif mergeable.nil?
     UpdateMergeableWorker.perform_in(1.minute.from_now,
                                      repository.name,
