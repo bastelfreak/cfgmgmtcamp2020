@@ -610,6 +610,37 @@ background-size: cover
 
 ???
 
+---
+
+background-image: url(blue-skies.jpg)
+background-size: cover
+
+.left-column[
+## Rails App
+]
+
+.right-column[
+
+```ruby
+case type
+    when 'pull_request'
+      # Ignore events which are triggered by the bot
+      return if payload.dig('sender', 'id').to_i == 53_702_691
+
+      if Repository.notably? payload['repository']['name']
+        @processor = GithubEvent::PullRequest.new(payload)
+      end
+    when *known_but_ignoreable_events
+      true
+    else
+      Raven.capture_message("Unknown Hook Received: #{type}", extra: payload)
+    end
+```
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
 
 
 
