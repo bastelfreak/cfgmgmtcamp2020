@@ -10,5 +10,6 @@ This is a talk from [flipez](https://twitter.com/Was1NicerDude) and [bastelfreak
 
 ## License
 
-This project contains two licenses. The code is licensed as GNU Affero General
-Public License v3.0. The documentation/text is licsensed as CC BY-NC-SA 4.0.
+This project contains two licenses. The code is licensed as
+[GNU Affero General Public License v3.0](LICENSE). The documentation/text is
+licsensed as [CC BY-NC-SA 4.0](LICENSE).
