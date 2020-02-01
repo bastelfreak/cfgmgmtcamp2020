@@ -599,13 +599,133 @@ class: center, middle, inverse
 ]
 
 .right-column[
-![img](VPT-overview.jpg)
+<img src="getallthediffs.png" alt="drawing" style="float: right;width: 130px; margin-right: 50px"/>
+
+### "There is this script. Do you think we can improve it?"
+
+* Checks supported OS ranges
+* Checks supported Puppet range
+
+* Sort repos into categories based on
+  * managed modules files
+  * voxpupuli/plumbing repo
+  * forge releases
+  * information in files in every repository
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+---
+
+.left-column[
+## VPT
+]
+
+.right-column[
+<img src="getallthediffs.png" alt="drawing" style="float: right;width: 130px; margin-right: 50px"/>
+
+### "There is this script. Do you think we can improve it?"
+
+* Checks supported OS ranges
+* Checks supported Puppet range
+
+* Sort repos into categories based on
+  * managed modules files
+  * voxpupuli/plumbing repo
+  * forge releases
+  * information in files in every repository
+
+## Uhm, I guess
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+---
+
+.left-column[
+## VPT
+]
+
+.right-column[
+![img](vpt_dashboard.png)
 ]
 
 .footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
 
+---
+
+.left-column[
+## VPT
+]
+
+.right-column[
+## The to-do list
+![img](vpt_sort_1.png)
+
+* Refreshed every 6 hours
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## VPT
+]
+
+.right-column[
+## The to-do list
+![img](vpt_sort_2.png)
+
+* Refreshed every 6 hours
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+.left-column[
+## VPT
+]
+
+.right-column[
+## The repository view
+![img](vpt_repo.png)
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
+---
+
+class: center, middle, inverse
+
+# What else could we do?
+
+???
+
+---
+
+.left-column[
+## VPT
+]
+
+.right-column[
+![img](VPT-overview.jpg)
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
 ---
 
 .left-column[
@@ -654,7 +774,6 @@ def validate(saved_changes)
   label = Label.needs_rebase
   if mergeable == true
     ensure_label_is_detached(label)
-    update(eligible_for_comment: true)
   elsif mergeable == false
     repository.ensure_label_exists(label)
 
@@ -676,6 +795,7 @@ end
 .footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
 
 ???
+
 
 
 
