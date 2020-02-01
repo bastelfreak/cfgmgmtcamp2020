@@ -2,33 +2,51 @@
 <html>
   <head>
     <title>Automating the Vox Pupuli Yak Shaving</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style type="text/css">
       @font-face {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: "Yanone Kaffeesatz";
         font-style: normal;
         font-weight: 400;
-        src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url(YDAoLskQQ5MOAgvHUQCcLbvy90DtE_Pg_qiF9bHvTzw.ttf) format('truetype');
+        src: local("Yanone Kaffeesatz Regular"),
+          local("YanoneKaffeesatz-Regular"),
+          url(YDAoLskQQ5MOAgvHUQCcLbvy90DtE_Pg_qiF9bHvTzw.ttf)
+            format("truetype");
       }
-         body {
-        font-family: 'Droid Serif';
+      body {
+        font-family: "Droid Serif";
       }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+      h1,
+      h2,
+      h3 {
+        font-family: "Yanone Kaffeesatz";
         font-weight: 400;
         margin-bottom: 0;
       }
-      .remark-slide-content h1 { font-size: 3em; }
-      .remark-slide-content h2 { font-size: 2em; }
-      .remark-slide-content h3 { font-size: 1.6em; }
+      .remark-slide-content h1 {
+        font-size: 3em;
+      }
+      .remark-slide-content h2 {
+        font-size: 2em;
+      }
+      .remark-slide-content h3 {
+        font-size: 1.6em;
+      }
       .footnote {
         position: absolute;
         bottom: 3em;
       }
-      li p { line-height: 1.25em; }
-      .red { color: #fa0000; }
-      .large { font-size: 2em; }
-      a, a > code {
+      li p {
+        line-height: 1.25em;
+      }
+      .red {
+        color: #fa0000;
+      }
+      .large {
+        font-size: 2em;
+      }
+      a,
+      a > code {
         color: rgb(249, 38, 114);
         text-decoration: none;
       }
@@ -38,8 +56,13 @@
         background: #e7e8e2;
         border-radius: 5px;
       }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-      .remark-code-line-highlighted     { background-color: #373832; }
+      .remark-code,
+      .remark-inline-code {
+        font-family: "Ubuntu Mono";
+      }
+      .remark-code-line-highlighted {
+        background-color: #373832;
+      }
       .pull-left {
         float: left;
         width: 47%;
@@ -63,7 +86,8 @@
         color: #777872;
         text-shadow: 0 0 20px #333;
       }
-      .inverse h1, .inverse h2 {
+      .inverse h1,
+      .inverse h2 {
         color: #f3f3f3;
         line-height: 0.8em;
       }
@@ -75,13 +99,14 @@
       #slide-how .slides {
         font-size: 0.9em;
         position: absolute;
-        top:  151px;
+        top: 151px;
         right: 140px;
       }
       #slide-how .slides h3 {
         margin-top: 0.2em;
       }
-      #slide-how .slides .first, #slide-how .slides .second {
+      #slide-how .slides .first,
+      #slide-how .slides .second {
         padding: 1px 20px;
         height: 90px;
         width: 120px;
@@ -111,7 +136,8 @@
         height: 92%;
         float: left;
       }
-      .left-column h2:last-of-type, .left-column h3:last-child {
+      .left-column h2:last-of-type,
+      .left-column h3:last-child {
         color: #000;
       }
       .right-column {
@@ -642,6 +668,51 @@ case type
 
 ???
 
+---
+
+background-image: url(blue-skies.jpg)
+background-size: cover
+
+.left-column[
+## Rails App
+]
+
+.right-column[
+
+```ruby
+def validate(saved_changes)
+  # Don't run through the validaten, if only the eligable_for_comment attribute got updated
+  return if saved_changes.keys.sort == %w[updated_at eligable_for_comment].sort && !mergeable.nil?
+
+  # if the pull request is now closed, dont attach/remove labels/comments
+  return if closed?
+
+  label = Label.needs_rebase
+  if mergeable == true
+    ensure_label_is_detached(label)
+    update(eligible_for_comment: true)
+  elsif mergeable == false
+    repository.ensure_label_exists(label)
+
+    ##
+    # We only add a comment if we addded a label. If the label already is present
+    # we also already added the comment. So no need for a new one.
+    add_comment(I18n.t('comment.needs_rebase', author: author)) if ensure_label_is_attached(label)
+  elsif mergeable.nil?
+    UpdateMergeableWorker.perform_in(1.minute.from_now,
+                                     repository.name,
+                                     number,
+                                     id,
+                                     saved_changes)
+  end
+end
+```
+]
+
+.footnote[[@Was1NicerDude](https://twitter.com/Was1NicerDude) & [@bastelsblog](https://twitter.com/bastelsblog) for [@voxpupuliorg](https://twitter.com/voxpupuliorg)]
+
+???
+
 
 
 
@@ -650,15 +721,14 @@ case type
 
 
     </textarea>
-    <script src="remark-latest.min.js">
-    </script>
+    <script src="remark-latest.min.js"></script>
     <script>
       var slideshow = remark.create({
         // Set the slideshow display ratio
         // Default: '4:3'
         // Alternatives: '16:9', ...
-        ratio: '16:9'}
-      );
+        ratio: "16:9"
+      });
     </script>
   </body>
 </html>
